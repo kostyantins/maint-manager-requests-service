@@ -22,6 +22,7 @@ public class MaintRequestController {
     @SneakyThrows
     @GetMapping
     public ResponseEntity<MaintRequests> getMaintRequests(@RequestParam Long requestsId) {
+        //to test circuitBreaker
         log.info("Waiting {}ms", DELAY);
         Thread.sleep(DELAY += 100);
         log.info("Responding with error");

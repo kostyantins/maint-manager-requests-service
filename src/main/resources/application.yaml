@@ -3,3 +3,14 @@ spring:
     hibernate:
       ddl-auto: create
 
+  cloud:
+    stream:
+      bindings:
+        # in - input queue
+        # out - output queue
+        # 0, 1, 2 ... - number of the queue if more than one
+        maintUpdateEventConsumer-in-0:
+          # destination - the name of the topic
+          destination: maint-topic
+          # group - the name of the queue
+          group: maint-event-queue
